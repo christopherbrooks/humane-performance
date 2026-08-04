@@ -11,9 +11,10 @@
 <style>
 /* ============================================================================
    HUMANE PERFORMANCE INITIATIVE — one file, one site.
-   You almost never need to touch the code below.
-   To add performances or videos, scroll to the very bottom of this file,
-   to the part clearly marked  >>> EDIT HERE <<< .
+   You almost never need to touch the styles below.
+   The words on the page live further down, in the sections marked
+   HOME, QUARTET HARRIET and PAST PERFORMANCES. See  >>> EDIT HERE <<<
+   near the bottom for how to add a performance.
    ============================================================================ */
 
 :root{
@@ -57,10 +58,6 @@ a{color:inherit;}
   font-weight:600;
   line-height:1;
 }
-/* placeholder text — replace the bracketed bits with your own words, then
-   you can delete this rule if you like. It just dims empty slots so they're
-   easy to find. */
-.ph{opacity:.5;font-style:italic;}
 
 /* =========================== MASTHEAD (every page) ================= */
 .masthead{background:var(--paper);border-bottom:1px solid var(--rule);}
@@ -106,48 +103,12 @@ nav.main button[aria-current="page"]{color:var(--ink);}
 
 /* Matches the masthead's 1080px so the text lines up with the logo above it. */
 .wrap{max-width:1080px;margin:0 auto;padding:.8rem 1.5rem 1.4rem;}
-.wrap-wide{max-width:1080px;}
-
-/* =========================== BANNER (logo only) =================== */
-.hero{background:var(--paper);max-width:1080px;margin:0 auto;padding:2.2rem 1.5rem 1.4rem;}
-.hero-logo{width:100%;max-width:340px;aspect-ratio:1.6 / 1;
-  background:var(--logo) no-repeat left center;background-size:contain;}
-
-/* ---- epigraph — the quote, set apart on its own ---- */
-.epigraph{max-width:1080px;margin:0 auto;padding:0 1.5rem 2.8rem;}
-.epigraph blockquote{margin:0;max-width:46ch;}
-.epigraph p{font-family:"EB Garamond",Georgia,serif;font-style:italic;
-  font-size:clamp(1.02rem,1.6vw,1.25rem);line-height:1.55;color:var(--ink);margin:0 0 .5rem;}
-.epigraph cite{font-style:normal;color:var(--ink-soft);font-size:.92rem;}
-
-.btn{
-  font-family:ui-sans-serif,system-ui,sans-serif;font-weight:600;
-  text-transform:uppercase;letter-spacing:.13em;font-size:.72rem;
-  padding:.85rem 1.5rem;border-radius:2px;cursor:pointer;border:1px solid var(--brass);
-  transition:background .25s ease,color .25s ease;
-}
-.btn-solid{background:var(--brass);color:var(--pine);}
-.btn-solid:hover{background:var(--brass-hi);}
-.btn-ghost{background:transparent;color:var(--sage);}
-.btn-ghost:hover{background:rgba(220,192,127,.12);color:var(--paper-hi);}
-
-/* =========================== UPCOMING BAND (home) ================= */
-.upcoming-band{background:transparent;border-bottom:1px solid var(--rule);}
-.upcoming-band .wrap{padding:3.2rem 1.5rem 3.4rem;}
-.upcoming-head{display:flex;align-items:baseline;justify-content:space-between;gap:1rem;margin-bottom:.4rem;}
-.alllink{background:none;border:0;cursor:pointer;color:var(--ink-soft);
-  font-family:ui-sans-serif,system-ui,sans-serif;text-transform:uppercase;letter-spacing:.12em;font-size:.68rem;font-weight:600;
-  border-bottom:1.5px solid transparent;transition:border-color .25s ease,color .25s ease;padding-bottom:2px;}
-.alllink:hover{color:var(--ink);border-color:var(--brass);}
-.upcoming-band.is-empty{display:none;}
 
 /* =========================== TYPE on paper ========================= */
 .page-title{
   font-family:"EB Garamond",Georgia,serif;font-weight:400;font-size:clamp(2rem,5vw,3rem);
   line-height:1.05;letter-spacing:-.01em;margin:0 0 .4rem;color:var(--ink);
 }
-.page-sub{color:var(--ink-soft);font-size:1.05rem;margin:0 0 1.8rem;max-width:52ch;}
-.rule{height:1px;background:var(--rule);border:0;margin:2.4rem 0;}
 p{margin:0 0 .45rem;}
 .lead{font-size:1.2rem;line-height:1.5;}
 
@@ -156,7 +117,6 @@ p{margin:0 0 .45rem;}
 .principles>li{padding:0;display:grid;grid-template-columns:auto 1fr;gap:.5rem;align-items:baseline;}
 .principles .mark{font-family:"EB Garamond",Georgia,serif;color:var(--brass);font-size:1.1rem;}
 .principles strong{font-weight:600;}
-.principles .note{color:var(--ink-soft);display:block;font-size:.96rem;margin-top:.15rem;}
 .content-h{font-family:"EB Garamond",Georgia,serif;font-weight:500;font-size:1.5rem;color:var(--ink);margin:1.1rem 0 .15rem;}
 .subprinciples{list-style:disc;margin:0 0 0 1.2rem;padding:0;color:var(--ink-soft);}
 .subprinciples li{padding:0;}
@@ -190,49 +150,13 @@ p{margin:0 0 .45rem;}
 .upcoming-title{margin-top:.8rem;}
 .venue{margin:0;}
 
-/* =========================== PERFORMANCES ========================== */
-.perf{border-top:1px solid var(--rule);padding:1.7rem 0;display:grid;grid-template-columns:130px 1fr;gap:1.6rem;}
-.perf:last-of-type{border-bottom:1px solid var(--rule);}
-.perf .when{color:var(--brass);}
-.perf .when .d{font-family:"EB Garamond",Georgia,serif;font-size:1.3rem;line-height:1.1;color:var(--ink);}
-.perf .when .t{font-family:ui-sans-serif,system-ui,sans-serif;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);margin-top:.25rem;}
-.perf h3{font-family:"EB Garamond",Georgia,serif;font-weight:500;font-size:1.4rem;margin:0 0 .3rem;}
-.perf .where{color:var(--ink-soft);margin:0 0 .5rem;}
-.perf .prog{margin:0 0 .5rem;}
-.perf .tags{font-family:ui-sans-serif,system-ui,sans-serif;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--brass);}
-.perf a.more{display:inline-block;margin-top:.7rem;font-family:ui-sans-serif,system-ui,sans-serif;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;font-weight:600;color:var(--ink);border-bottom:1.5px solid var(--brass);text-decoration:none;padding-bottom:2px;}
-
-/* =========================== VIDEOS =============================== */
-.videos{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.8rem;margin-top:1rem;}
-.vid{text-decoration:none;color:inherit;display:block;group:video;}
-.vid .thumb{position:relative;aspect-ratio:16/9;border-radius:4px;overflow:hidden;background:var(--pine-2);border:1px solid var(--rule);}
-.vid .thumb img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease;}
-.vid:hover .thumb img{transform:scale(1.04);}
-.vid .play{position:absolute;inset:0;display:grid;place-items:center;}
-.vid .play span{width:54px;height:54px;border-radius:50%;background:rgba(31,43,35,.72);display:grid;place-items:center;transition:background .25s ease;}
-.vid:hover .play span{background:var(--brass);}
-.vid .play svg{width:20px;height:20px;fill:var(--paper-hi);margin-left:3px;}
-.vid h3{font-family:"EB Garamond",Georgia,serif;font-weight:500;font-size:1.12rem;margin:.85rem 0 .2rem;}
-.vid .date{font-family:ui-sans-serif,system-ui,sans-serif;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);}
-
-/* empty state */
-.empty{border:1px dashed var(--rule);border-radius:4px;padding:2.4rem;text-align:center;color:var(--ink-soft);background:rgba(255,255,255,.25);}
-.empty p{margin:.2rem 0;}
-
 /* =========================== PROSE LINKS ========================== */
 .wrap p a,.wrap .content-h a{color:var(--ink);text-decoration:none;border-bottom:1.5px solid var(--brass);padding-bottom:1px;}
 .wrap p a:hover,.wrap .content-h a:hover{color:var(--brass);}
 
-/* =========================== CONTACT ============================== */
-.contact-card{margin-top:1.5rem;font-size:1.15rem;}
-.contact-card a{color:var(--ink);text-decoration:none;border-bottom:1.5px solid var(--brass);padding-bottom:2px;}
-.contact-card a:hover{color:var(--brass);}
-
 /* =========================== FOOTER (dim room) ==================== */
 footer{background:var(--pine);color:var(--ink);}
 .footer-inner{max-width:1080px;margin:0 auto;padding:.9rem 1.5rem;display:flex;flex-wrap:wrap;gap:1.4rem 3rem;justify-content:space-between;align-items:end;}
-.footer-inner .note{max-width:34ch;color:#3a4a33;font-size:.95rem;}
-.footer-inner .note em{color:var(--ink);font-style:italic;}
 .footer-inner .fcontact{font-family:ui-sans-serif,system-ui,sans-serif;font-size:.8rem;letter-spacing:.05em;}
 .footer-inner .fcontact p{margin:.15rem 0;}
 .footer-inner .fcontact a{color:var(--ink);text-decoration:none;border-bottom:1px solid rgba(38,33,26,.45);}
@@ -240,11 +164,8 @@ footer{background:var(--pine);color:var(--ink);}
 /* =========================== RESPONSIVE ========================== */
 @media(max-width:640px){
   body{font-size:18px;}
-  .perf{grid-template-columns:1fr;gap:.5rem;}
-  .perf .when{display:flex;align-items:baseline;gap:.7rem;}
   nav.main{gap:0;}
   nav.main button{padding:.5rem .5rem;font-size:.62rem;letter-spacing:.1em;}
-  .brand-word{font-size:.9rem;}
 }
 @media(prefers-reduced-motion:reduce){
   *{animation:none!important;scroll-behavior:auto!important;}
@@ -261,7 +182,7 @@ footer{background:var(--pine);color:var(--ink);}
     </button>
     <blockquote class="masthead-quote">
       <p>« Il est probable que dans la hiérarchie artistique, les oiseaux sont les plus grands musiciens qui existent sur notre planète. »</p>
-      <cite>-Olivier Messiaen</cite>
+      <cite>&mdash; Olivier Messiaen</cite>
     </blockquote>
   </div>
   <nav class="main" aria-label="Primary">
@@ -279,9 +200,9 @@ footer{background:var(--pine);color:var(--ink);}
       <h1 class="page-title">Humane Performance Initiative</h1>
       <p>There were several inspirations for this project:</p>
       <ul class="principles inspirations">
-        <li><span class="mark">◦</span><div>My love of classical chamber music</div></li>
-        <li><span class="mark">◦</span><div>The intriguing example of the avant-garde movement of the late 1950s and early 1960s, the Beats, Abstract Expressionism, musical experimenters like John Cage. At times, these pioneers forgot beauty (imho, a mistake), but their ideas remain fruitful.</div></li>
-        <li><span class="mark">◦</span><div>The incessant noise and high sound levels of the contemporary world (including popular music)</div></li>
+        <li><span class="mark">◦</span><div>My love of classical chamber music.</div></li>
+        <li><span class="mark">◦</span><div>The intriguing example of the avant-garde movement of the late 1950s and early 1960s, the Beats, Abstract Expressionism, and musical experimenters like John Cage. At times, these pioneers forgot beauty (imho, a mistake), but their ideas remain fruitful.</div></li>
+        <li><span class="mark">◦</span><div>The incessant noise and high sound levels of the contemporary world (including popular music).</div></li>
         <li><span class="mark">◦</span><div>The desire to break from rectangular screens and stages with a passive audience.</div></li>
         <li><span class="mark">◦</span><div>Nature.</div></li>
       </ul>
@@ -295,24 +216,17 @@ footer{background:var(--pine);color:var(--ink);}
             <li>My compositions</li>
             <li>In C, Terry Riley</li>
             <li>Morton Feldman</li>
-            <li>Who else?</li>
+            <li>Others? (Suggestions are welcome.)</li>
           </ul>
         </div></li>
         <li><span class="mark">◦</span><div>Low ticket prices, children free and encouraged</div></li>
-        <li><span class="mark">◦</span><div>Multiple performances per program around the County</div></li>
+        <li><span class="mark">◦</span><div>Multiple performances per program</div></li>
         <li><span class="mark">◦</span><div>Alcohol consumption encouraged (depending on performance location)</div></li>
       </ul>
-      <h2 class="page-title upcoming-title">Upcoming performances</h2>
+      <h2 class="page-title upcoming-title">Upcoming Performances</h2>
       <h3 class="content-h"><a href="#quartet">Quartet Harriet</a></h3>
       <p class="venue">Urban Arts House, 430 West Orange Street, Lancaster, PA — Date to be determined</p>
       <p class="venue">Molly S Photography, 128 East Grant Street, Lancaster, PA — Date to be determined</p>
-    </div>
-    <!-- upcoming performances, surfaced on the landing page -->
-    <div class="upcoming-band" id="home-upcoming">
-      <div class="wrap wrap-wide">
-        <p class="eyebrow" style="color:var(--brass)">Upcoming performances</p>
-        <div id="home-perf-list"></div>
-      </div>
     </div>
   </section>
 
@@ -320,7 +234,7 @@ footer{background:var(--pine);color:var(--ink);}
   <section class="page" id="quartet">
     <div class="wrap">
       <h2 class="page-title">Quartet Harriet</h2>
-      <p class="lead">Quartet Harriet was founded to honor the woman who made this possible, including funding, my mother Harriet L. Brooks.</p>
+      <p class="lead">Quartet Harriet was founded to honor the woman who made this possible, including funding: my mother, Harriet L. Brooks.</p>
       <p class="eyebrow members-label">Members</p>
       <ul class="members">
         <li><h3 class="member-name">Christopher Brooks<span class="inst">violin</span></h3></li>
@@ -341,7 +255,7 @@ footer{background:var(--pine);color:var(--ink);}
           <p class="member-bio"><a href="https://youtu.be/wjsCIKgfnKs" target="_blank" rel="noopener">Watch the performance</a></p>
         </li>
         <li>
-          <h3 class="member-name">Strand<span class="inst">Art Vault &middot; Fringe 2026</span></h3>
+          <h3 class="member-name">Strand<span class="inst">Lancaster Art Vault &middot; Fringe 2026</span></h3>
           <p class="member-bio">With Grant Street Dance Company. <a href="https://youtu.be/8zdbJQ4Krpk" target="_blank" rel="noopener">Watch the performance</a></p>
         </li>
         <li>
@@ -377,109 +291,17 @@ footer{background:var(--pine);color:var(--ink);}
 
 <script>
 /* ============================================================================
-   >>> EDIT HERE <<<   —  This is the only part you ever need to change.
+   >>> EDIT HERE <<<   —  The performances are written directly in the page.
 
-   Two lists below: PERFORMANCES and VIDEOS.
-   To add one, copy an entry from { to } , paste it above the others,
-   and change the words inside the quotes. Keep the comma after each } .
-   That's the whole trick: every entry sits between { }, and entries are
-   separated by commas. When a list is empty, the page shows a short
-   placeholder line that you can edit lower down in this file.
+   Scroll UP to the coloured sections marked HOME, QUARTET HARRIET and
+   PAST PERFORMANCES. Each performance is one <li> block: copy an existing
+   one, paste it above or below, and change the words between the > and <.
+
+   The little grey text beside a title lives in <span class="inst">.
+   The line underneath, with the link, is <p class="member-bio">.
+
+   The code below only handles switching between the three pages.
    ============================================================================ */
-
-const PERFORMANCES = [
-
-  /* ---- TEMPLATE (copy this, fill it in, remove these comment lines) ----
-  {
-    day:     "",     // short date shown big, e.g. the month and day
-    time:    "",     // leave "" if unknown
-    title:   "",
-    place:   "",     // venue, town
-    program: "",     // what's being played
-    tags:    "",     // e.g. a short note, or "" for none
-    link:    "",     // an RSVP/info web link, or "" for none
-    linkText:""      // the words for that link
-  },
-  ------------------------------------------------------------------- */
-
-  // (Nothing listed yet — add your first performance above this line.)
-
-];
-
-const VIDEOS = [
-
-  /* ---- TEMPLATE (copy this, fill it in, remove these comment lines) ----
-  {
-    title: "",
-    date:  "",
-    url:   ""     // paste any YouTube link; the thumbnail loads automatically
-  },
-     Your sample clip, kept here for whenever you want it:
-     url: "https://youtu.be/w_wd8s-dqm0"
-  ------------------------------------------------------------------- */
-
-  // (Nothing listed yet — add your first video above this line.)
-
-];
-
-/* ============================================================================
-   You can stop reading here. The code below just draws the page.
-   ============================================================================ */
-
-// ---- build the markup for one performance ----
-function perfHTML(p){
-  const t=p.time?`<div class="t">${esc(p.time)}</div>`:'';
-  const prog=p.program?`<p class="prog">${esc(p.program)}</p>`:'';
-  const where=p.place?`<p class="where">${esc(p.place)}</p>`:'';
-  const tags=p.tags?`<div class="tags">${esc(p.tags)}</div>`:'';
-  const more=(p.link)?`<a class="more" href="${esc(p.link)}" target="_blank" rel="noopener">${esc(p.linkText||'Details')}</a>`:'';
-  return `<article class="perf">
-    <div class="when"><div class="d">${esc(p.day||'')}</div>${t}</div>
-    <div><h3>${esc(p.title||'')}</h3>${where}${prog}${tags}${more}</div>
-  </article>`;
-}
-
-// ---- render the Upcoming performances on the home page ----
-function renderHomeUpcoming(){
-  const band=document.getElementById('home-upcoming');
-  const box=document.getElementById('home-perf-list');
-  if(!PERFORMANCES.length){ band.classList.add('is-empty'); box.innerHTML=''; return; }
-  band.classList.remove('is-empty');
-  box.innerHTML=PERFORMANCES.map(perfHTML).join('');
-}
-
-// ---- render videos (pulls the thumbnail straight from the YouTube link) ----
-function ytid(url){
-  if(!url) return '';
-  const m=url.match(/(?:youtu\.be\/|v=|embed\/|shorts\/)([A-Za-z0-9_-]{6,})/);
-  return m?m[1]:'';
-}
-function renderVideos(){
-  const box=document.getElementById('video-list');
-  // The Past Performances page is written by hand now, so this container may
-  // not be on the page at all. Add <div id="video-list"></div> back if you
-  // ever want the automatic YouTube thumbnails again.
-  if(!box) return;
-  if(!VIDEOS.length){
-    // This shows on the Past Performances page when the list above is empty. Edit freely.
-    box.innerHTML='<div class="empty"><p class="ph">[ shown when nothing is listed — your words here ]</p></div>';
-    box.className='';return;
-  }
-  box.className='videos';
-  box.innerHTML=VIDEOS.map(v=>{
-    const id=ytid(v.url);
-    const thumb=id?`https://img.youtube.com/vi/${id}/hqdefault.jpg`:'';
-    const watch=id?`https://www.youtube.com/watch?v=${id}`:(v.url||'#');
-    return `<a class="vid" href="${esc(watch)}" target="_blank" rel="noopener">
-      <div class="thumb">${thumb?`<img src="${thumb}" alt="" loading="lazy">`:''}
-        <span class="play"><span><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></span>
-      </div>
-      <h3>${esc(v.title||'Untitled')}</h3>
-      <div class="date">${esc(v.date||'')}</div>
-    </a>`;
-  }).join('');
-}
-function esc(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
 
 // ---- simple page switching (acts like separate pages, stays one file) ----
 const pages=[...document.querySelectorAll('.page')];
@@ -494,8 +316,6 @@ function go(id){
 document.querySelectorAll('[data-go]').forEach(el=>el.addEventListener('click',()=>go(el.dataset.go)));
 window.addEventListener('hashchange',()=>go(location.hash.slice(1)||'home'));
 
-renderHomeUpcoming();
-renderVideos();
 go(location.hash.slice(1)||'home');
 </script>
 </body>
