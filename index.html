@@ -40,7 +40,7 @@ body{
   color:var(--ink);
   font-family:"EB Garamond",Georgia,serif;
   font-size:19px;
-  line-height:1.52;
+  line-height:1.3;
   -webkit-font-smoothing:antialiased;
   text-rendering:optimizeLegibility;
 }
@@ -69,20 +69,20 @@ a{color:inherit;}
    is left. Widen the window and the quote reflows onto fewer lines,
    reaching a single line once its column passes ~838px.               */
 .masthead-top{
-  max-width:1080px;margin:0 auto;padding:1.1rem 1.5rem .7rem;
+  max-width:1080px;margin:0 auto;padding:.8rem 1.5rem .5rem;
   display:flex;align-items:center;gap:2rem;
 }
 .brand{display:flex;align-items:center;cursor:pointer;border:0;background:none;padding:0;flex:none;}
-.brand-mark{display:block;height:88px;aspect-ratio:1.6 / 1;background:var(--logo) no-repeat left center;background-size:contain;}
+.brand-mark{display:block;height:78px;aspect-ratio:1.6 / 1;background:var(--logo) no-repeat left center;background-size:contain;}
 .masthead-quote{margin:0;flex:1 1 0;min-width:0;text-align:left;}
 /* Capped at 1.125rem so the sentence still fits one line in the 859px
    the quote gets at full width — raise the cap and it breaks to two.   */
 .masthead-quote p{font-family:"EB Garamond",Georgia,serif;font-style:italic;
   font-size:clamp(.95rem,1.35vw,1.125rem);line-height:1.5;color:var(--ink);margin:0 0 .4rem;}
 .masthead-quote cite{font-style:normal;color:var(--ink-soft);font-size:.9rem;}
-@media(max-width:640px){.brand-mark{height:70px;}}
+@media(max-width:640px){.brand-mark{height:58px;}}
 
-nav.main{display:flex;gap:.2rem;flex-wrap:wrap;max-width:1080px;margin:0 auto;padding:0 1.5rem .6rem;}
+nav.main{display:flex;gap:.2rem;flex-wrap:wrap;max-width:1080px;margin:0 auto;padding:0 1.5rem .35rem;}
 nav.main button{
   font-family:ui-sans-serif,system-ui,sans-serif;
   text-transform:uppercase;letter-spacing:.16em;font-size:.68rem;font-weight:600;
@@ -104,7 +104,8 @@ nav.main button[aria-current="page"]{color:var(--ink);}
 .page.is-active{display:block;}
 @keyframes fade{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:none;}}
 
-.wrap{max-width:720px;margin:0 auto;padding:3rem 1.5rem 3.5rem;}
+/* Matches the masthead's 1080px so the text lines up with the logo above it. */
+.wrap{max-width:1080px;margin:0 auto;padding:.8rem 1.5rem 1.4rem;}
 .wrap-wide{max-width:1080px;}
 
 /* =========================== BANNER (logo only) =================== */
@@ -147,19 +148,47 @@ nav.main button[aria-current="page"]{color:var(--ink);}
 }
 .page-sub{color:var(--ink-soft);font-size:1.05rem;margin:0 0 1.8rem;max-width:52ch;}
 .rule{height:1px;background:var(--rule);border:0;margin:2.4rem 0;}
-p{margin:0 0 .8rem;}
+p{margin:0 0 .45rem;}
 .lead{font-size:1.2rem;line-height:1.5;}
 
 /* principles */
-.principles{list-style:none;margin:1.4rem 0 0;padding:0;}
-.principles>li{padding:.8rem 0;border-top:1px solid var(--rule);display:grid;grid-template-columns:auto 1fr;gap:1.1rem;align-items:baseline;}
-.principles>li:last-child{border-bottom:1px solid var(--rule);}
+.principles{list-style:none;margin:.7rem 0 0;padding:0;}
+.principles>li{padding:0;display:grid;grid-template-columns:auto 1fr;gap:.5rem;align-items:baseline;}
 .principles .mark{font-family:"EB Garamond",Georgia,serif;color:var(--brass);font-size:1.1rem;}
 .principles strong{font-weight:600;}
 .principles .note{color:var(--ink-soft);display:block;font-size:.96rem;margin-top:.15rem;}
-.content-h{font-family:"EB Garamond",Georgia,serif;font-weight:500;font-size:1.5rem;color:var(--ink);margin:2.2rem 0 .2rem;}
-.subprinciples{list-style:disc;margin:.5rem 0 .1rem 1.2rem;padding:0;color:var(--ink-soft);}
-.subprinciples li{padding:.12rem 0;}
+.content-h{font-family:"EB Garamond",Georgia,serif;font-weight:500;font-size:1.5rem;color:var(--ink);margin:1.1rem 0 .15rem;}
+.subprinciples{list-style:disc;margin:0 0 0 1.2rem;padding:0;color:var(--ink-soft);}
+.subprinciples li{padding:0;}
+
+/* Two bullet lists now run back to back on the home page; this keeps the
+   inspirations from reading as the first few principles. */
+.inspirations{margin-bottom:1.1rem;}
+
+/* Quartet members. Each name is a subhead rather than body text, so a bio
+   paragraph can sit under it and still read as belonging to that person.
+   "Members" drops to a small-caps label to stay out of the names' way. */
+.members-label{margin:1.1rem 0 .4rem;color:var(--ink-soft);}
+.members{list-style:none;margin:0;padding:0;display:grid;gap:.75rem;}
+.members li{margin:0;}
+.member-name{
+  font-family:"EB Garamond",Georgia,serif;font-weight:500;font-size:1.35rem;
+  line-height:1.2;color:var(--ink);margin:0;
+  display:flex;flex-wrap:wrap;align-items:baseline;gap:.55rem;
+}
+/* same uppercase sans treatment the performance times use */
+.member-name .inst{font-family:ui-sans-serif,system-ui,sans-serif;font-size:.72rem;
+  letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);}
+.member-bio{margin:.15rem 0 0;max-width:70ch;}
+
+/* Past performances borrow the members treatment - a title with a small label
+   for the place, and a line of detail beneath - but need more air between
+   entries, since each one carries a link. */
+.past-list{gap:1.15rem;}
+
+/* upcoming performances, written by hand on the home page */
+.upcoming-title{margin-top:.8rem;}
+.venue{margin:0;}
 
 /* =========================== PERFORMANCES ========================== */
 .perf{border-top:1px solid var(--rule);padding:1.7rem 0;display:grid;grid-template-columns:130px 1fr;gap:1.6rem;}
@@ -190,6 +219,10 @@ p{margin:0 0 .8rem;}
 .empty{border:1px dashed var(--rule);border-radius:4px;padding:2.4rem;text-align:center;color:var(--ink-soft);background:rgba(255,255,255,.25);}
 .empty p{margin:.2rem 0;}
 
+/* =========================== PROSE LINKS ========================== */
+.wrap p a,.wrap .content-h a{color:var(--ink);text-decoration:none;border-bottom:1.5px solid var(--brass);padding-bottom:1px;}
+.wrap p a:hover,.wrap .content-h a:hover{color:var(--brass);}
+
 /* =========================== CONTACT ============================== */
 .contact-card{margin-top:1.5rem;font-size:1.15rem;}
 .contact-card a{color:var(--ink);text-decoration:none;border-bottom:1.5px solid var(--brass);padding-bottom:2px;}
@@ -197,7 +230,7 @@ p{margin:0 0 .8rem;}
 
 /* =========================== FOOTER (dim room) ==================== */
 footer{background:var(--pine);color:var(--ink);}
-.footer-inner{max-width:1080px;margin:0 auto;padding:2rem 1.5rem;display:flex;flex-wrap:wrap;gap:1.4rem 3rem;justify-content:space-between;align-items:end;}
+.footer-inner{max-width:1080px;margin:0 auto;padding:.9rem 1.5rem;display:flex;flex-wrap:wrap;gap:1.4rem 3rem;justify-content:space-between;align-items:end;}
 .footer-inner .note{max-width:34ch;color:#3a4a33;font-size:.95rem;}
 .footer-inner .note em{color:var(--ink);font-style:italic;}
 .footer-inner .fcontact{font-family:ui-sans-serif,system-ui,sans-serif;font-size:.8rem;letter-spacing:.05em;}
@@ -232,6 +265,7 @@ footer{background:var(--pine);color:var(--ink);}
     </blockquote>
   </div>
   <nav class="main" aria-label="Primary">
+    <button data-go="home">Home</button>
     <button data-go="quartet">Quartet Harriet</button>
     <button data-go="past">Past Performances</button>
   </nav>
@@ -243,7 +277,15 @@ footer{background:var(--pine);color:var(--ink);}
   <section class="page is-active" id="home">
     <div class="wrap">
       <h1 class="page-title">Humane Performance Initiative</h1>
-      <h2 class="content-h">Principles</h2>
+      <p>There were several inspirations for this project:</p>
+      <ul class="principles inspirations">
+        <li><span class="mark">◦</span><div>My love of classical chamber music</div></li>
+        <li><span class="mark">◦</span><div>The intriguing example of the avant-garde movement of the late 1950s and early 1960s, the Beats, Abstract Expressionism, musical experimenters like John Cage. At times, these pioneers forgot beauty (imho, a mistake), but their ideas remain fruitful.</div></li>
+        <li><span class="mark">◦</span><div>The incessant noise and high sound levels of the contemporary world (including popular music)</div></li>
+        <li><span class="mark">◦</span><div>The desire to break from rectangular screens and stages with a passive audience.</div></li>
+        <li><span class="mark">◦</span><div>Nature.</div></li>
+      </ul>
+      <h3 class="content-h">Principles</h3>
       <ul class="principles">
         <li><span class="mark">◦</span><div>All natural instruments (no electronics)</div></li>
         <li><span class="mark">◦</span><div>Humane sound levels</div></li>
@@ -258,10 +300,12 @@ footer{background:var(--pine);color:var(--ink);}
         </div></li>
         <li><span class="mark">◦</span><div>Low ticket prices, children free and encouraged</div></li>
         <li><span class="mark">◦</span><div>Multiple performances per program around the County</div></li>
-        <li><span class="mark">◦</span><div>Alcohol consumption encouraged (if there is a designated driver) BYOB</div></li>
+        <li><span class="mark">◦</span><div>Alcohol consumption encouraged (depending on performance location)</div></li>
       </ul>
-      <p>For the first year, performances will be with Quartet Harriet LINK TO QUARTET HARRIET PAGE</p>
-      <p>PAGE FOR PAST PERFORMANCES: A sample performance: @Ariel Trust 23 May 26 short clip</p>
+      <h2 class="page-title upcoming-title">Upcoming performances</h2>
+      <h3 class="content-h"><a href="#quartet">Quartet Harriet</a></h3>
+      <p class="venue">Urban Arts House, 430 West Orange Street, Lancaster, PA — Date to be determined</p>
+      <p class="venue">Molly S Photography, 128 East Grant Street, Lancaster, PA — Date to be determined</p>
     </div>
     <!-- upcoming performances, surfaced on the landing page -->
     <div class="upcoming-band" id="home-upcoming">
@@ -275,18 +319,48 @@ footer{background:var(--pine);color:var(--ink);}
   <!-- ===================== QUARTET HARRIET ===================== -->
   <section class="page" id="quartet">
     <div class="wrap">
-      <h2 class="page-title ph">Quartet Harriet</h2>
-      <p class="lead ph">[ your text about Quartet Harriet ]</p>
-      <p class="ph">[ more text — add or remove paragraphs as you like ]</p>
+      <h2 class="page-title">Quartet Harriet</h2>
+      <p class="lead">Quartet Harriet was founded to honor the woman who made this possible, including funding, my mother Harriet L. Brooks.</p>
+      <p class="eyebrow members-label">Members</p>
+      <ul class="members">
+        <li><h3 class="member-name">Christopher Brooks<span class="inst">violin</span></h3></li>
+        <li><h3 class="member-name">Jennifer Sternick<span class="inst">violin</span></h3></li>
+        <li><h3 class="member-name">Jenny Huerter<span class="inst">viola</span></h3></li>
+        <li><h3 class="member-name">Laurie Reese<span class="inst">violoncello</span></h3></li>
+      </ul>
     </div>
   </section>
 
   <!-- ===================== PAST PERFORMANCES ===================== -->
   <section class="page" id="past">
-    <div class="wrap wrap-wide">
-      <h2 class="page-title ph">[ your title ]</h2>
-      <p class="page-sub ph">[ optional intro line — or delete this line ]</p>
-      <div id="video-list"></div>
+    <div class="wrap">
+      <h2 class="page-title">Past Performances</h2>
+      <ul class="members past-list">
+        <li>
+          <h3 class="member-name">Ariel Trust<span class="inst">Lancaster &middot; 23 May 2026</span></h3>
+          <p class="member-bio"><a href="https://youtu.be/wjsCIKgfnKs" target="_blank" rel="noopener">Watch the performance</a></p>
+        </li>
+        <li>
+          <h3 class="member-name">Strand<span class="inst">Art Vault &middot; Fringe 2026</span></h3>
+          <p class="member-bio">With Grant Street Dance Company. <a href="https://youtu.be/8zdbJQ4Krpk" target="_blank" rel="noopener">Watch the performance</a></p>
+        </li>
+        <li>
+          <h3 class="member-name">Atelier 11<span class="inst">Paris &middot; 18 October 2025</span></h3>
+          <p class="member-bio">With Hiia Saumaa, dancer. <a href="https://youtu.be/n484sNX2UtE" target="_blank" rel="noopener">Watch the performance</a></p>
+        </li>
+        <li>
+          <h3 class="member-name">A Walk in the Woods<span class="inst">Lancaster Art Vault &middot; 10 April 2025</span></h3>
+          <p class="member-bio">Christopher Brooks, violin and viola. <a href="https://youtu.be/Ds3jHrmR6q0" target="_blank" rel="noopener">Watch the performance</a></p>
+        </li>
+        <li>
+          <h3 class="member-name">Wild Mountain Thyme<span class="inst">West Art &middot; 2 June 2024</span></h3>
+          <p class="member-bio">With Maria Gabriella, singer. <a href="https://youtu.be/R1GJ7O_FIqc" target="_blank" rel="noopener">Watch the performance</a></p>
+        </li>
+        <li>
+          <h3 class="member-name">In C<span class="inst">Buchan Park &middot; 9 April 2023</span></h3>
+          <p class="member-bio"><a href="https://drive.google.com/file/d/17_yC3qhgoYBJu9LsNvJBLEWe2FylXynw/view?usp=sharing" target="_blank" rel="noopener">About this performance (PDF)</a></p>
+        </li>
+      </ul>
     </div>
   </section>
 
@@ -298,7 +372,6 @@ footer{background:var(--pine);color:var(--ink);}
       <p>Christopher Brooks</p>
       <p><a href="mailto:kenorjazz@gmail.com">kenorjazz@gmail.com</a></p>
     </div>
-    <p class="note ph">[ optional footer line — or delete this line ]</p>
   </div>
 </footer>
 
@@ -383,6 +456,10 @@ function ytid(url){
 }
 function renderVideos(){
   const box=document.getElementById('video-list');
+  // The Past Performances page is written by hand now, so this container may
+  // not be on the page at all. Add <div id="video-list"></div> back if you
+  // ever want the automatic YouTube thumbnails again.
+  if(!box) return;
   if(!VIDEOS.length){
     // This shows on the Past Performances page when the list above is empty. Edit freely.
     box.innerHTML='<div class="empty"><p class="ph">[ shown when nothing is listed — your words here ]</p></div>';
