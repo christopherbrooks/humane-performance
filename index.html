@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Humane Performance Initiative</title>
-<meta name="description" content="Chamber music at humane sound levels: acoustic instruments, intimate rooms, no stage, and low ticket prices. Lancaster, Pennsylvania.">
+<meta name="description" content="Beautiful avant-garde performances on natural instruments, intimate audience engagement in intriguing spaces.">
 
 <!-- Tab icon. Inlined so the page stays a single portable file. -->
 <link rel="icon" type="image/png" sizes="32x32" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAKCSURBVFhH7ZNLT1NBGIZZYBrSbnqRspOLUliIpa0boBUQK5cgAhIxLLhoWrpBjUSjEogJgkS5hFAvGIygAYFYAohIrKZCAzXSCm0Rilo0CChFI7/gNT3KaQ/HxmgAN2fxJOfMvF/mmW9m/FZd7/E/8Vs/sNUwAowAI8AIUASWP73B475OWmgzoQjYXxshEAiQmKDAxCsDLfwnJscNaGqogUZ9HMdyjyArMx052YdRU1UB18IMLe+GIuAO9enuIzJSBC6Xi9MnNbBahmlFFFacaG3REovF75OjWFVESHS1t6Cnuw03mq5BJo2GRCLGvHOSVk8RGHrUjcL8PDzsvIuy82cgFAoJkcKCPBie9lIKp62jqLx0gVg0OysDHfdu+9zlqsuJ1BQl4hVxtDlqBxZn0Hy9jthNeloyIiJEYLPZYLFY4HA4xE5UJ/KRfDAJygOJ0KiLYNBTxXzx7fNbhIaE4Ja21reAN1MTRjx7okN7WzMaaqtQfrEUUomYEAoICCDOdnR4kFa3nq6OO7D9OsbGumoo5DGUeZ8CvjCNDOFcaQmCg3eAx+MhLCwUFWVnYTW/oGXnZs0QhYdjsP/ny7K8fI49Ubuxsug5qr8WWOPr0iwGeh/gaE4mIcLn85GWooSuqxXfl9+RuaWPU+T3l/lpxMXGwGEfI8f+WcAbh92E+quVCN+1k+zKlcvlmHOYadmk/QmUbm2IgAcn+nvakXEoleiIW8b9qoyGATKzVyaF2aQn/zdYwIPNMoJTJcUIDNxOyCjksWisrybuwMIHG5nbNIE13HfgprYWYnEUeFwu/Lf5Q60qIOc3XcCb8TE9ZLJoCIOCyLEtFfgdjAAjwAgwAj8A42kodacD9ngAAAAASUVORK5CYII=">
@@ -16,7 +16,7 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Humane Performance Initiative">
 <meta property="og:title" content="Humane Performance Initiative">
-<meta property="og:description" content="Chamber music at humane sound levels: acoustic instruments, intimate rooms, no stage, and low ticket prices. Lancaster, Pennsylvania.">
+<meta property="og:description" content="Beautiful avant-garde performances on natural instruments, intimate audience engagement in intriguing spaces.">
 <meta property="og:url" content="https://humaneperformance.com/">
 <meta property="og:image" content="https://humaneperformance.com/og-image.png">
 <meta property="og:image:width" content="1200">
@@ -85,17 +85,18 @@ a{color:inherit;}
    reaching a single line once its column passes ~838px.               */
 .masthead-top{
   max-width:1080px;margin:0 auto;padding:.8rem 1.5rem .5rem;
-  display:flex;align-items:center;gap:2rem;
+  /* flex-end so the Messiaen citation sits on the bird's baseline */
+  display:flex;align-items:flex-end;gap:2rem;
 }
 .brand{display:flex;align-items:center;cursor:pointer;border:0;background:none;padding:0;flex:none;}
-.brand-mark{display:block;height:78px;aspect-ratio:1.6 / 1;background:var(--logo) no-repeat left center;background-size:contain;}
+.brand-mark{display:block;height:136px;aspect-ratio:1.6 / 1;background:var(--logo) no-repeat left center;background-size:contain;}
 .masthead-quote{margin:0;flex:1 1 0;min-width:0;text-align:left;}
 /* Capped at 1.125rem so the sentence still fits one line in the 859px
    the quote gets at full width — raise the cap and it breaks to two.   */
 .masthead-quote p{font-family:"EB Garamond",Georgia,serif;font-style:italic;
   font-size:clamp(.95rem,1.35vw,1.125rem);line-height:1.5;color:var(--ink);margin:0 0 .4rem;}
 .masthead-quote cite{font-style:normal;color:var(--ink-soft);font-size:.9rem;}
-@media(max-width:640px){.brand-mark{height:58px;}}
+@media(max-width:640px){.brand-mark{height:100px;}}
 
 nav.main{display:flex;gap:.2rem;flex-wrap:wrap;max-width:1080px;margin:0 auto;padding:0 1.5rem .35rem;}
 nav.main button{
@@ -147,8 +148,17 @@ p{margin:0 0 .45rem;}
    paragraph can sit under it and still read as belonging to that person.
    "Members" drops to a small-caps label to stay out of the names' way. */
 .members-label{margin:1.1rem 0 .4rem;color:var(--ink-soft);}
-.members{list-style:none;margin:0;padding:0;display:grid;gap:.75rem;}
-.members li{margin:0;}
+.members{list-style:none;margin:0;padding:0;display:grid;gap:1.5rem;}
+/* flow-root so a floated portrait stays inside its own member block.
+   Capped narrower than the page so the portrait sits beside the words
+   rather than drifting off to the far right margin. */
+.members li{margin:0;display:flow-root;max-width:860px;}
+/* Portraits float right, which keeps every name flush left whether or not
+   that member has a photo yet. */
+/* Sits inside the bio paragraph, not the list item, so its top edge starts at
+   the first line of prose rather than up beside the name. The small top margin
+   offsets the line's leading so the photo aligns with the letter tops. */
+.member-photo{float:right;width:190px;height:auto;margin:.3rem 0 .6rem 1.6rem;border-radius:3px;}
 .member-name{
   font-family:"EB Garamond",Georgia,serif;font-weight:500;font-size:1.35rem;
   line-height:1.2;color:var(--ink);margin:0;
@@ -184,6 +194,7 @@ footer{background:var(--pine);color:var(--ink);}
   body{font-size:18px;}
   nav.main{gap:0;}
   nav.main button{padding:.5rem .5rem;font-size:.62rem;letter-spacing:.1em;}
+  .member-photo{width:110px;margin-left:1rem;}
 }
 @media(prefers-reduced-motion:reduce){
   *{animation:none!important;scroll-behavior:auto!important;}
@@ -257,7 +268,10 @@ footer{background:var(--pine);color:var(--ink);}
       <ul class="members">
         <li><h3 class="member-name">Christopher Brooks<span class="inst">violin</span></h3></li>
         <li><h3 class="member-name">Jennifer Sternick<span class="inst">violin</span></h3></li>
-        <li><h3 class="member-name">Jenny Huerter<span class="inst">viola</span></h3></li>
+        <li>
+          <h3 class="member-name">Jenny Huerter<span class="inst">viola</span></h3>
+          <p class="member-bio"><img class="member-photo" src="photos/jenny-huerter.jpg" alt="Jenny Huerter holding her viola" width="600" height="1480">Jenny Huerter is an active performer and teacher of viola and violin in the Central PA area. She is Assistant Principal Viola of the York Symphony Orchestra and performs regularly with other groups including the Pennsylvania Philharmonic, Gettysburg Chamber Orchestra, Lancaster Symphony Orchestra, Fulton Theater Orchestra and many other orchestral and chamber groups in the area. She is Adjunct Professor of Viola and Violin at Lancaster Bible College and coaches viola sectionals for the York Youth Symphony Orchestra, as well as teaching privately from her home in Annville, PA. Jenny holds a B.M. in Viola Performance and an M.M. in Viola Performance and Pedagogy, both from the Peabody Institute of the Johns Hopkins University, where she studied with Victoria Chiang. In addition to her work as a musician and teacher, Jenny is mom to four amazing kids who keep life full and always an adventure.</p>
+        </li>
         <li><h3 class="member-name">Laurie Reese<span class="inst">violoncello</span></h3></li>
       </ul>
     </div>
