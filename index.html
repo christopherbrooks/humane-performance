@@ -159,6 +159,10 @@ p{margin:0 0 .45rem;}
    the first line of prose rather than up beside the name. The small top margin
    offsets the line's leading so the photo aligns with the letter tops. */
 .member-photo{float:right;width:190px;height:auto;margin:.3rem 0 .6rem 1.6rem;border-radius:3px;}
+/* Landscape photographs need more width than a portrait to read at all. */
+.member-photo-wide{width:360px;}
+/* Publication titles: the bullets belong to the paragraph above them. */
+.pubs{margin-top:.15rem;}
 .member-name{
   font-family:"EB Garamond",Georgia,serif;font-weight:500;font-size:1.35rem;
   line-height:1.2;color:var(--ink);margin:0;
@@ -168,19 +172,26 @@ p{margin:0 0 .45rem;}
 .member-name .inst{font-family:ui-sans-serif,system-ui,sans-serif;font-size:.72rem;
   letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);}
 .member-bio{margin:.15rem 0 0;max-width:70ch;}
+/* Must follow .member-bio, not precede it: same specificity, so the later rule
+   wins. The paragraph holding a wide photo drops the 70ch cap, letting the photo
+   float to the right edge of the column rather than the middle of the text. */
+.member-bio-wide{max-width:none;}
 
 /* Past performances borrow the members treatment - a title with a small label
    for the place, and a line of detail beneath - but need more air between
    entries, since each one carries a link. */
 .past-list{gap:1.15rem;}
 
-/* upcoming performances, written by hand on the home page */
-.upcoming-title{margin-top:.8rem;}
+/* upcoming performances, written by hand on the home page. The quartet sits a
+   level below the section heading, so it uses the member-name size. */
+/* Follows .member-name so these win. Drops to body size, with weight rather
+   than size carrying the hierarchy at this depth. */
+.upcoming-sub{margin:.5rem 0 .1rem;font-size:1.1875rem;font-weight:600;}
 .venue{margin:0;}
 
 /* =========================== PROSE LINKS ========================== */
-.wrap p a,.wrap .content-h a{color:var(--ink);text-decoration:none;border-bottom:1.5px solid var(--brass);padding-bottom:1px;}
-.wrap p a:hover,.wrap .content-h a:hover{color:var(--brass);}
+.wrap p a,.wrap .content-h a,.wrap .member-name a{color:var(--ink);text-decoration:none;border-bottom:1.5px solid var(--brass);padding-bottom:1px;}
+.wrap p a:hover,.wrap .content-h a:hover,.wrap .member-name a:hover{color:var(--brass);}
 
 /* =========================== FOOTER (dim room) ==================== */
 footer{background:var(--pine);color:var(--ink);}
@@ -195,6 +206,8 @@ footer{background:var(--pine);color:var(--ink);}
   nav.main{gap:0;}
   nav.main button{padding:.5rem .5rem;font-size:.62rem;letter-spacing:.1em;}
   .member-photo{width:110px;margin-left:1rem;}
+  /* A landscape shot floated this small stops reading; let it run full width. */
+  .member-photo-wide{float:none;width:100%;margin:.4rem 0 .9rem;}
 }
 @media(prefers-reduced-motion:reduce){
   *{animation:none!important;scroll-behavior:auto!important;}
@@ -227,7 +240,11 @@ footer{background:var(--pine);color:var(--ink);}
   <section class="page is-active" id="home">
     <div class="wrap">
       <h1 class="page-title">Humane Performance Initiative</h1>
-      <p>There were several inspirations for this project:</p>
+      <h3 class="content-h">Upcoming Performances</h3>
+      <h4 class="member-name upcoming-sub"><a href="#quartet">Quartet Harriet</a></h4>
+      <p class="venue"><a href="https://www.urbanartshouse.org" target="_blank" rel="noopener">Urban Arts House</a>, 430 West Orange Street, Lancaster, PA — Date to be determined</p>
+      <p class="venue"><a href="https://www.mollysphotography.com" target="_blank" rel="noopener">Molly S. Photography</a>, 128 East Grant Street, Lancaster, PA — Date to be determined</p>
+      <h3 class="content-h">Inspirations</h3>
       <ul class="principles inspirations">
         <li><span class="mark">◦</span><div>My love of classical chamber music.</div></li>
         <li><span class="mark">◦</span><div>The intriguing example of the avant-garde movement of the late 1950s and early 1960s, the Beats, Abstract Expressionism, and musical experimenters like John Cage. At times, these pioneers forgot beauty (imho, a mistake), but their ideas remain fruitful.</div></li>
@@ -252,10 +269,6 @@ footer{background:var(--pine);color:var(--ink);}
         <li><span class="mark">◦</span><div>Multiple performances per program</div></li>
         <li><span class="mark">◦</span><div>Alcohol consumption encouraged (depending on performance location)</div></li>
       </ul>
-      <h2 class="page-title upcoming-title">Upcoming Performances</h2>
-      <h3 class="content-h"><a href="#quartet">Quartet Harriet</a></h3>
-      <p class="venue"><a href="https://www.urbanartshouse.org" target="_blank" rel="noopener">Urban Arts House</a>, 430 West Orange Street, Lancaster, PA — Date to be determined</p>
-      <p class="venue"><a href="https://www.mollysphotography.com" target="_blank" rel="noopener">Molly S. Photography</a>, 128 East Grant Street, Lancaster, PA — Date to be determined</p>
     </div>
   </section>
 
@@ -266,7 +279,20 @@ footer{background:var(--pine);color:var(--ink);}
       <p class="lead">Quartet Harriet was founded to honor the woman who made this possible, including funding: my mother, Harriet L. Brooks.</p>
       <p class="eyebrow members-label">Members</p>
       <ul class="members">
-        <li><h3 class="member-name">Christopher Brooks<span class="inst">violin</span></h3></li>
+        <li>
+          <h3 class="member-name">Christopher Brooks<span class="inst">violin</span></h3>
+          <p class="member-bio member-bio-wide"><img class="member-photo member-photo-wide" src="photos/christopher-brooks.jpg" alt="Christopher Brooks playing the violin in a gallery" width="1100" height="552">Christopher Brooks was born and raised in Brooklyn, New York. He began studying the violin at PS 8 in Brooklyn Heights and at the Third Street Music School. Attending the New School of Music in Philadelphia, Mr. Brooks studied violin with Jascha Brodsky and Geoffrey Michaels.</p>
+          <p class="member-bio">He has played chamber music and been a member of numerous orchestras including Orquesta Bética Filarmónica de Sevilla (concertmaster), the Frysk Orkest in the Netherlands, and the Lancaster, Reading, York, and Harrisburg Symphonies (concertmaster). Currently, he plays with the Allegro Chamber Orchestra in Lancaster, Pennsylvania.</p>
+          <p class="member-bio">In addition to his broad experience in orchestral and chamber music, he has performed with many improvisation-based ensembles, including folk, rock, jazz, Klezmer, and freely-improvised accompaniments for modern dance.</p>
+          <p class="member-bio">Christopher Brooks is also a professional acoustics consultant, working as a Senior Consultant with Acoustic Distinctions (Stamford, Connecticut, and New York). His specialty is music and acoustics and acoustical design for performance spaces.</p>
+          <p class="member-bio"><a href="https://www.creativeviolinist.com" target="_blank" rel="noopener">www.creativeviolinist.com</a> has more information on Christopher&rsquo;s performing and teaching.</p>
+          <p class="member-bio">Among his publications are:</p>
+          <ul class="subprinciples pubs">
+            <li><em>The Creative Violinist: Integrating Technique and Music through Improvisation</em></li>
+            <li><em>Architectural Acoustics</em></li>
+            <li><em>Bemused: Poems Written After Dark</em></li>
+          </ul>
+        </li>
         <li><h3 class="member-name">Jennifer Sternick<span class="inst">violin</span></h3></li>
         <li>
           <h3 class="member-name">Jenny Huerter<span class="inst">viola</span></h3>
