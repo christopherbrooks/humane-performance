@@ -189,8 +189,18 @@ p{margin:0 0 .45rem;}
 .upcoming-sub{margin:.5rem 0 .1rem;font-size:1.1875rem;font-weight:600;}
 .venue{margin:0;}
 /* A photo introducing a single performance. Half the width of the venue line
-   below it - small enough to sit as an aside rather than a banner. */
-.venue-photo{display:block;width:100%;max-width:445px;height:auto;border-radius:3px;margin:.55rem 0 .7rem;}
+   below it - small enough to sit as an aside rather than a banner. The figure
+   carries the width so the caption can be positioned against it, and is a
+   container so the caption scales with the photo rather than staying put at a
+   fixed rem size when the photo shrinks on a phone. */
+.venue-figure{position:relative;display:block;width:100%;max-width:445px;margin:.55rem 0 .7rem;container-type:inline-size;}
+.venue-photo{display:block;width:100%;height:auto;border-radius:3px;}
+/* Title laid over the photo, a quarter of the way up. The red is warmed and
+   darkened towards the brass so it belongs to the palette; legibility over a
+   busy mid-tone photograph comes from the shadow, not from a brighter red. */
+.venue-figure-caption{position:absolute;left:0;right:0;bottom:25%;text-align:center;pointer-events:none;
+  font-family:"EB Garamond",Georgia,serif;font-size:8.5cqw;font-weight:700;letter-spacing:.005em;
+  color:#D24E30;text-shadow:0 1px 2px rgba(14,9,4,.8),0 0 9px rgba(14,9,4,.72),0 0 22px rgba(14,9,4,.5);}
 
 /* =========================== PROSE LINKS ========================== */
 .wrap p a,.wrap .content-h a,.wrap .member-name a{color:var(--ink);text-decoration:none;border-bottom:1.5px solid var(--brass);padding-bottom:1px;}
@@ -245,7 +255,10 @@ footer{background:var(--pine);color:var(--ink);}
       <h1 class="page-title">Humane Performance Initiative</h1>
       <h3 class="content-h">Upcoming Performances</h3>
       <h4 class="member-name upcoming-sub"><a href="#quartet">Quartet Harriet</a></h4>
-      <img class="venue-photo" src="photos/chickies-creek-trail.jpg" alt="A wooded trail along Chickies Creek, with water running over rocks beside it" width="900" height="675">
+      <figure class="venue-figure">
+        <img class="venue-photo" src="photos/chickies-creek-trail.jpg" alt="A wooded trail along Chickies Creek, with water running over rocks beside it" width="900" height="675">
+        <figcaption class="venue-figure-caption">A Walk in the Woods</figcaption>
+      </figure>
       <p class="venue"><a href="https://www.urbanartshouse.org" target="_blank" rel="noopener">Urban Arts House</a>, 430 West Orange Street, Lancaster, PA — Friday, 6 November, 5:00 pm (First Friday). Free will offering.</p>
       <p class="venue"><a href="https://www.mollysphotography.com" target="_blank" rel="noopener">Molly S. Photography</a>, 128 East Grant Street, Lancaster, PA — Date to be determined</p>
       <h4 class="member-name upcoming-sub">Members of <a href="#quartet">Quartet Harriet</a></h4>
