@@ -25,7 +25,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap" rel="stylesheet">
 <style>
 /* ============================================================================
    HUMANE PERFORMANCE INITIATIVE — one file, one site.
@@ -203,9 +203,14 @@ p{margin:0 0 .45rem;}
    than letting the second line push it up the frame. Both the type and the
    leading are in cqw, so the block stays the same fraction of the photo at
    every width and one bottom value serves them all. */
-.venue-figure-caption{position:absolute;left:0;right:0;bottom:11%;text-align:center;pointer-events:none;
-  font-family:"EB Garamond",Georgia,serif;font-size:8.5cqw;line-height:1.18;font-weight:700;letter-spacing:.005em;
+.venue-figure-caption{position:absolute;left:0;right:0;bottom:11.5%;text-align:center;pointer-events:none;
+  font-family:"EB Garamond",Georgia,serif;font-size:7.44cqw;line-height:1.18;font-weight:600;letter-spacing:.005em;
   color:#D24E30;text-shadow:0 1px 2px rgba(14,9,4,.8),0 0 9px rgba(14,9,4,.72),0 0 22px rgba(14,9,4,.5);}
+/* The work's title, so <cite> - italic by default, stated here anyway in case
+   a reset flattens it. 600 is the heaviest EB Garamond face actually served in
+   either posture; asking for 700 got a synthesised bold, and would have got a
+   slanted synthesised bold once the title went italic. */
+.venue-figure-caption cite{font-style:italic;font-weight:600;}
 
 /* =========================== PROSE LINKS ========================== */
 .wrap p a,.wrap .content-h a,.wrap .member-name a{color:var(--ink);text-decoration:none;border-bottom:1.5px solid var(--brass);padding-bottom:1px;}
@@ -262,7 +267,7 @@ footer{background:var(--pine);color:var(--ink);}
       <h4 class="member-name upcoming-sub"><a href="#quartet">Quartet Harriet</a></h4>
       <figure class="venue-figure">
         <img class="venue-photo" src="photos/chickies-creek-trail.jpg" alt="A wooded trail along Chickies Creek, with water running over rocks beside it" width="900" height="675">
-        <figcaption class="venue-figure-caption">String Quartet<br>A Walk in the Woods</figcaption>
+        <figcaption class="venue-figure-caption">String Quartet<br><cite>A Walk in the Woods</cite></figcaption>
       </figure>
       <p class="venue"><a href="https://www.urbanartshouse.org" target="_blank" rel="noopener">Urban Arts House</a>, 430 West Orange Street, Lancaster, PA — Friday, 6 November, 5:00 pm (First Friday). Free will offering.</p>
       <p class="venue"><a href="https://www.mollysphotography.com" target="_blank" rel="noopener">Molly S. Photography</a>, 128 East Grant Street, Lancaster, PA — Date to be determined</p>
