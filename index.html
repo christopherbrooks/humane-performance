@@ -194,6 +194,7 @@ p{margin:0 0 .45rem;}
    container so the caption scales with the photo rather than staying put at a
    fixed rem size when the photo shrinks on a phone. */
 .venue-figure{position:relative;display:block;width:100%;max-width:389px;margin:.55rem 0 .7rem;container-type:inline-size;}
+.venue-figure.is-small{max-width:180px;}
 .venue-photo{display:block;width:100%;height:auto;border-radius:3px;}
 /* Title laid over the photo, low in the frame. The red is warmed and
    darkened towards the brass so it belongs to the palette; legibility over a
@@ -211,6 +212,12 @@ p{margin:0 0 .45rem;}
    either posture; asking for 700 got a synthesised bold, and would have got a
    slanted synthesised bold once the title went italic. */
 .venue-figure-caption cite{font-style:italic;font-weight:600;}
+/* The sketch is a small figure over pale paper: the type is stepped down from
+   the trail photo's 8.5cqw so the label sits on the page rather than filling
+   it, and the shadow is tightened - a wide dark glow that reads as depth over
+   a dark photograph only smudges over cream manuscript paper. */
+.venue-figure.is-small .venue-figure-caption{font-size:7cqw;
+  text-shadow:0 1px 2px rgba(14,9,4,.55),0 0 6px rgba(255,252,244,.9),0 0 12px rgba(255,252,244,.75);}
 
 /* =========================== PROSE LINKS ========================== */
 .wrap p a,.wrap .content-h a,.wrap .member-name a{color:var(--ink);text-decoration:none;border-bottom:1.5px solid var(--brass);padding-bottom:1px;}
@@ -271,6 +278,10 @@ footer{background:var(--pine);color:var(--ink);}
       </figure>
       <p class="venue"><a href="https://www.urbanartshouse.org" target="_blank" rel="noopener">Urban Arts House</a>, 430 West Orange Street, Lancaster, PA — Friday, 6 November, 5:00 pm (First Friday). Free will offering.</p>
       <p class="venue"><a href="https://www.mollysphotography.com" target="_blank" rel="noopener">Molly S. Photography</a>, 128 East Grant Street, Lancaster, PA — Date to be determined</p>
+      <figure class="venue-figure is-small">
+        <img class="venue-photo" src="photos/hope-sketch.jpg" alt="A handwritten pencil sketch of a score on manuscript paper" width="400" height="540">
+        <figcaption class="venue-figure-caption">String Quartet in progress<br>(sketch)</figcaption>
+      </figure>
       <p class="venue"><a href="https://oliviasfineart.cargo.site" target="_blank" rel="noopener">Olivia&rsquo;s Fine Art</a>, 140 North Prince Street, Lancaster, PA — Date to be determined</p>
       <h4 class="member-name upcoming-sub">Members of <a href="#quartet">Quartet Harriet</a></h4>
       <p class="venue"><a href="https://lititzlibrary.org" target="_blank" rel="noopener">Lititz Public Library</a>, 651 Kissel Hill Road, Lititz, PA — Monday, 23 November, 6:30–7:30 pm. Klezmer and Jewish music, with Christopher Brooks, violin, and Laurie Haines Reese, violoncello.</p>
