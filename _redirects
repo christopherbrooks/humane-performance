@@ -1,0 +1,7 @@
+# Every other address the site answers on sends people to the primary one.
+# Netlify reads this file; the "!" makes the redirect win even though the
+# alias domains would otherwise serve the site directly.
+https://listen-silently.com/*        https://listensilently.com/:splat  301!
+https://www.listen-silently.com/*    https://listensilently.com/:splat  301!
+https://humaneperformance.com/*      https://listensilently.com/:splat  301!
+https://www.humaneperformance.com/*  https://listensilently.com/:splat  301!
